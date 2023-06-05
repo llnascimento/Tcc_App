@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="350dp"
+            android:layout_height="500dp"
+            android:backgroundTint="@color/verdeD"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atividades"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/navegarAdic"
+            android:layout_width="84dp"
+            android:layout_height="87dp"
+            android:backgroundTint="@color/verde"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.091"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
+            app:layout_constraintVertical_bias="0.137">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="69dp"
+
+                android:layout_marginTop="8dp"
+                app:srcCompat="@drawable/adiconar"
+                tools:srcCompat="@drawable/adiconar" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/carddeletar"
+            android:layout_width="84dp"
+            android:layout_height="87dp"
+            android:backgroundTint="@color/verde"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.905"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
+            app:layout_constraintVertical_bias="0.137">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="63dp"
+                android:layout_height="61dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="12dp"
+                app:srcCompat="@drawable/excluir"
+                tools:srcCompat="@drawable/excluir" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardedit"
+            android:layout_width="84dp"
+            android:layout_height="87dp"
+            android:backgroundTint="@color/verde"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
+            app:layout_constraintVertical_bias="0.137">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="62dp"
+                android:layout_height="66dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/editar"
+                tools:srcCompat="@drawable/editar" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Adicionar"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardedit"
+            app:layout_constraintVertical_bias="0.058" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="182dp"
+            android:text="Editar"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardedit"
+            app:layout_constraintVertical_bias="0.058" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:text="Lixeira"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carddeletar"
+            app:layout_constraintVertical_bias="0.058" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

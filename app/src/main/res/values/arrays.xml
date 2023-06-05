@@ -1,0 +1,42 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+
+    <string-array name="time">
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+        <item>20 minutes</item>
+        <item>25 minutes</item>
+        <item>30 minutes</item>
+        <item>35 minutes</item>
+        <item>40 minutes</item>
+        <item>45 minutes</item>
+        <item>50 minutes</item>
+        <item>55 minutes</item>
+        <item>1 hour</item>
+    </string-array>
+
+    <string-array name="time_values">
+        <item>300000</item>
+        <item>600000</item>
+        <item>900000</item>
+        <item>1200000</item>
+        <item>1500000</item>
+        <item>1800000</item>
+        <item>2100000</item>
+        <item>2400000</item>
+        <item>2700000</item>
+        <item>3000000</item>
+        <item>3300000</item>
+        <item>3600000</item>
+    </string-array>
+</resources>

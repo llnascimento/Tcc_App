@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".Register">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardback"
+        android:layout_width="60dp"
+        android:layout_height="63dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048">
+
+        <ImageView
+            android:id="@+id/imageback"
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            app:srcCompat="@drawable/voltar"
+            tools:srcCompat="@drawable/voltar" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="59dp"
+        android:layout_height="29dp"
+        android:text="Voltar"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.308"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="355dp"
+        android:layout_height="517dp"
+        app:cardBackgroundColor="@color/cinza"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469">
+
+
+        <TextView
+            android:id="@+id/txtemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="135dp"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="305dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="180dp"
+            app:cardCornerRadius="10dp">
+
+            <EditText
+                android:id="@+id/etemail"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:ems="16"
+                android:hint="Digite seu Email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="260dp"
+            android:text="Senha"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="305dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="300dp"
+            app:cardCornerRadius="10dp">
+
+            <EditText
+                android:id="@+id/etsenha"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:ems="16"
+                android:hint="Digite sua Senha"
+                android:inputType="textPassword"
+                android:textColorHint="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Nome"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="305dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="65dp"
+            app:cardCornerRadius="10dp">
+
+            <EditText
+                android:id="@+id/etnome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:ems="16"
+                android:hint="Digite seu Nome"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textsexxo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="380dp"
+            android:text="Sexo"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="305dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="420dp"
+            app:cardCornerRadius="10dp">
+
+            <EditText
+                android:id="@+id/etsexo"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:ems="16"
+                android:hint="Digite seu Sexo"
+
+                android:textColorHint="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/bregister"
+        android:layout_width="102dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/black"
+        android:text="Salvar"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.407" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
