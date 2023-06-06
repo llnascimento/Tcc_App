@@ -12,7 +12,7 @@
 
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/settingsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Suas credenciais"
@@ -47,7 +47,7 @@
                 app:cardCornerRadius="60dp">
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/imageSettingsUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -55,7 +55,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/settingsNome"
                 android:layout_width="240dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="80dp"
@@ -80,14 +80,14 @@
             app:layout_constraintVertical_bias="0.195">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imageSettingsEmail"
                 android:layout_width="80dp"
                 android:layout_height="85dp"
                 app:srcCompat="@drawable/email"
                 tools:srcCompat="@drawable/email" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/settingsEmail"
                 android:layout_width="240dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="80dp"
@@ -113,7 +113,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/imageSettingsPass"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="13dp"
@@ -124,7 +124,7 @@
                 />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/settingsSenha"
                 android:layout_width="240dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="80dp"
@@ -150,7 +150,7 @@
             app:layout_constraintVertical_bias="0.663">
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/imageSettingsSex"
                 android:layout_width="58dp"
                 android:layout_height="59dp"
                 android:layout_marginLeft="13dp"
@@ -162,7 +162,7 @@
                 />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/settingsGenero"
                 android:layout_width="240dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="80dp"

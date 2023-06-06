@@ -1,5 +1,6 @@
 package com.example.sbrotina
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
@@ -75,6 +76,13 @@ class Starter : AppCompatActivity() {
                     val navegar = Intent(this@Starter,Home::class.java)
                     startActivity(navegar)
 
+                    val editor: SharedPreferences.Editor = getSharedPreferences("PREFERENCE" , Context.MODE_PRIVATE).edit()
+                    editor.putString("nome", response.body()?.nome);
+                    editor.putString("email", response.body()?.email);
+                    editor.putString("senha", response.body()?.senha);
+                    editor.putString("sexoUsuario", response.body()?.sexoUsuario);
+                    editor.commit()
+
                 }
 
             else {
@@ -90,5 +98,6 @@ class Starter : AppCompatActivity() {
         })
 
     }
+
 
 }

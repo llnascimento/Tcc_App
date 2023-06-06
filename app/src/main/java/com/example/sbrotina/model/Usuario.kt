@@ -13,5 +13,8 @@ data class Usuario(
    val senha: String,
    @SerializedName("sexoUsuario")
    val sexoUsuario: String
+
+
+
 )
 
