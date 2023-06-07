@@ -1,11 +1,16 @@
 package com.example.sbrotina
 
+import android.app.Activity
+import android.app.AlertDialog
+import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.example.sbrotina.task.AdicionarTask
 import com.example.sbrotina.task.DeleteTask
@@ -41,22 +46,21 @@ class HomeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false);
         val btn = view.findViewById<CardView>(R.id.navegarAdic)
-        val btn2 = view.findViewById<CardView>(R.id.cardedit)
-        val btn3 = view.findViewById<CardView>(R.id.carddeletar)
+        val btn2 = view.findViewById<CardView>(R.id.carddeletar)
+        val btn3 = view.findViewById<CardView>(R.id.cardsair)
 
         btn.setOnClickListener{
             val abrirOutraActivity = Intent(activity, AdicionarTask::class.java)
             startActivity(abrirOutraActivity)
         }
 
-        btn2.setOnClickListener{
-            val abrirOutraActivity = Intent(activity, UpdateTask::class.java)
+        btn2.setOnClickListener {
+            val abrirOutraActivity = Intent(activity, DeleteTask::class.java)
             startActivity(abrirOutraActivity)
         }
 
-        btn3.setOnClickListener {
-            val abrirOutraActivity = Intent(activity, DeleteTask::class.java)
-            startActivity(abrirOutraActivity)
+        btn3.setOnClickListener{
+            showAlertDialog()
         }
 
         // Inflate the layout for this fragment
@@ -81,5 +85,19 @@ class HomeFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun showAlertDialog(){
+        AlertDialog.Builder(activity)
+            .setTitle("Sair")
+            .setMessage("Deseja mesmo sair?")
+            .setPositiveButton("Sair", DialogInterface.OnClickListener { dialogInterface, i ->
+                val abrirOutraActivity = Intent(activity, MainActivity::class.java)
+                startActivity(abrirOutraActivity)
+                Toast.makeText(activity,"Você saiu da sua conta!!", Toast.LENGTH_LONG).show()
+            } )
+            .setNegativeButton("Cancelar", null)
+            .create()
+            .show()
     }
 }

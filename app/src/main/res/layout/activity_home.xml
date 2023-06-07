@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="1.0"
         app:itemTextColor="@color/white"
         app:itemIconSize="30dp"
+        app:itemIconTint="@color/cinza"
         />
 
     <FrameLayout
