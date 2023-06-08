@@ -1,5 +1,6 @@
 package com.example.sbrotina
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,6 +28,8 @@ class SettingsFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
+
         }
     }
 
@@ -41,6 +44,19 @@ class SettingsFragment : Fragment() {
         val txtsenha = view.findViewById<TextView>(R.id.settingsSenha)
         val txtsexo = view.findViewById<TextView>(R.id.settingsGenero)
 
+        val sharedPreferences = this.activity?.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+        val nome = sharedPreferences?.getString("nome", "")
+        val email = sharedPreferences?.getString("email", "")
+        val senha = sharedPreferences?.getString("senha", "")
+        val sexoUsuario = sharedPreferences?.getString("sexoUsuario", "")
+
+        txtnome.text = nome
+        txtemail.text = email
+        txtsenha.text = senha
+        txtsexo.text = sexoUsuario
+
+
+
         return view
     }
 
@@ -53,6 +69,8 @@ class SettingsFragment : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment SettingsFragment.
          */
+
+
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
@@ -60,6 +78,7 @@ class SettingsFragment : Fragment() {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
+
                 }
             }
     }

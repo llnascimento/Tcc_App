@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.work.ListenableWorker.Result.Success
 import com.example.sbrotina.api.Endpoint
 import com.example.sbrotina.databinding.ActivityStarterBinding
 import com.example.sbrotina.model.LoginModel
@@ -77,11 +78,25 @@ class Starter : AppCompatActivity() {
                     startActivity(navegar)
 
                     val editor: SharedPreferences.Editor = getSharedPreferences("PREFERENCE" , Context.MODE_PRIVATE).edit()
+                  //  editor.putString("id", response.body()?.id.toString());
                     editor.putString("nome", response.body()?.nome);
                     editor.putString("email", response.body()?.email);
                     editor.putString("senha", response.body()?.senha);
                     editor.putString("sexoUsuario", response.body()?.sexoUsuario);
                     editor.commit()
+
+                    val sharedPreferences = getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+                    val nome = sharedPreferences.getString("nome", "")
+                    val email = sharedPreferences.getString("email", "")
+                    val senha = sharedPreferences.getString("senha", "")
+                    val sexoUsuario = sharedPreferences.getString("sexoUsuario", "")
+
+                    println("Nome: $nome")
+                    println("Email: $email")
+                    println("Senha: $senha")
+                    println("Sexo do Usuário: $sexoUsuario")
+
+
 
                 }
 
