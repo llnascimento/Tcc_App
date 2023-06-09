@@ -78,7 +78,7 @@ class Starter : AppCompatActivity() {
                     startActivity(navegar)
 
                     val editor: SharedPreferences.Editor = getSharedPreferences("PREFERENCE" , Context.MODE_PRIVATE).edit()
-                  //  editor.putString("id", response.body()?.id.toString());
+                    editor.putInt("id", response.body()!!.id)
                     editor.putString("nome", response.body()?.nome);
                     editor.putString("email", response.body()?.email);
                     editor.putString("senha", response.body()?.senha);
@@ -86,11 +86,13 @@ class Starter : AppCompatActivity() {
                     editor.commit()
 
                     val sharedPreferences = getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+                    val id = sharedPreferences.getInt("id", 0)
                     val nome = sharedPreferences.getString("nome", "")
                     val email = sharedPreferences.getString("email", "")
                     val senha = sharedPreferences.getString("senha", "")
                     val sexoUsuario = sharedPreferences.getString("sexoUsuario", "")
 
+                    println("Id: $id")
                     println("Nome: $nome")
                     println("Email: $email")
                     println("Senha: $senha")

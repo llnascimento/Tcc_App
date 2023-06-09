@@ -48,10 +48,10 @@
 
                 <ImageView
                     android:id="@+id/imageSettingsUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/baseline_supervised_user_circle_24"
+                    tools:srcCompat="@drawable/baseline_supervised_user_circle_24" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -126,13 +126,13 @@
             <TextView
                 android:id="@+id/settingsSenha"
                 android:layout_width="240dp"
-                android:layout_height="25dp"
+                android:layout_height="48dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="28dp"
-                android:text="Senha"
+                android:text="SenhaOculta"
                 android:textColor="@color/white"
-                android:textSize="20dp"
-
+                android:textSize="26dp"
+                android:inputType="textPassword"
                 />
         </androidx.cardview.widget.CardView>
 

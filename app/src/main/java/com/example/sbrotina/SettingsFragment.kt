@@ -2,10 +2,13 @@ package com.example.sbrotina
 
 import android.content.Context
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match

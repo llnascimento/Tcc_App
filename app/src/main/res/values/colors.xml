@@ -13,4 +13,7 @@
     <color name="verdee">#239481</color>
     <color name="verdeD">#00473C</color>
     <color name="cinza">#21302A</color>
+
+    <color name="dialogButtonColor">#239481</color>
 </resources>
+
