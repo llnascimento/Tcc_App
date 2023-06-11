@@ -72,7 +72,7 @@
             app:cardCornerRadius="10dp">
 
             <EditText
-                android:id="@+id/edit_text_adicionar"
+                android:id="@+id/etNomeTarefa"
                 android:layout_width="290dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="5dp"
@@ -96,6 +96,7 @@
             app:cardCornerRadius="10dp">
 
             <EditText
+                android:id="@+id/etDescriTarefa"
                 android:layout_width="290dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="5dp"
@@ -120,13 +121,13 @@
 
 
             <EditText
-                android:id="@+id/editTextDate2"
+                android:id="@+id/etDataTarefa"
                 android:layout_width="290dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="5dp"
                 android:ems="10"
-                android:hint="Digite a data aqui"
-                android:inputType="date" />
+                android:hint="20/06/23"
+                android:inputType="text" />
 
         </androidx.cardview.widget.CardView>
 
@@ -148,13 +149,13 @@
 
 
             <EditText
-                android:id="@+id/editTextDate4"
+                android:id="@+id/etStatusTarefa"
                 android:layout_width="290dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="5dp"
                 android:ems="10"
-                android:hint="Digite a data aqui"
-                android:inputType="date" />
+                android:hint="Status da tarefa"
+                 />
 
         </androidx.cardview.widget.CardView>
 
@@ -162,7 +163,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/BtnAdicionarTask"
         android:layout_width="123dp"
         android:layout_height="57dp"
         android:layout_marginTop="10dp"

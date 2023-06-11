@@ -1,12 +1,8 @@
 package com.example.sbrotina
 
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,11 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.core.graphics.toColor
-import androidx.core.graphics.toColorInt
 import com.example.sbrotina.task.AdicionarTask
 import com.example.sbrotina.task.DeleteTask
-import com.example.sbrotina.task.UpdateTask
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

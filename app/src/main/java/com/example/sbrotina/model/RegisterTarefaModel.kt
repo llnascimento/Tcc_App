@@ -2,9 +2,7 @@ package com.example.sbrotina.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Tarefa(
-    @SerializedName("id")
-    val id: Int,
+data class RegisterTarefaModel(
 
     @SerializedName("nome")
     val nome: String,
@@ -20,6 +18,4 @@ data class Tarefa(
 
     @SerializedName("usuarioId")
     val usuarioId: Int
-
-
 )

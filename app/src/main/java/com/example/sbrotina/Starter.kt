@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.work.ListenableWorker.Result.Success
 import com.example.sbrotina.api.Endpoint
 import com.example.sbrotina.databinding.ActivityStarterBinding
 import com.example.sbrotina.model.LoginModel
