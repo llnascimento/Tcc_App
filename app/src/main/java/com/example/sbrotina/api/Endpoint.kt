@@ -3,6 +3,7 @@ package com.example.sbrotina.api
 import com.example.sbrotina.model.*
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.Headers
 import retrofit2.http.POST
 
@@ -21,5 +22,9 @@ interface Endpoint {
     @POST("/sbrotina/api/Tarefa/Cadastrar")
     @Headers("Content-Type: application/json")
     fun createtask(@Body userData: RegisterTarefaModel) : Call<Tarefa>
+
+    @DELETE("/sbrotina/api/Tarefa/Deletar")
+    @Headers("Content-Type: application/json")
+    fun deletetask(@Body userData: DeleteTask) : Call<Void>
 
 }
