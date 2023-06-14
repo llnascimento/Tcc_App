@@ -2,6 +2,7 @@ package com.example.sbrotina.api
 
 import com.example.sbrotina.model.*
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Headers
@@ -25,6 +26,6 @@ interface Endpoint {
 
     @DELETE("/sbrotina/api/Tarefa/Deletar")
     @Headers("Content-Type: application/json")
-    fun deletetask(@Body userData: DeleteTask) : Call<Void>
+    fun deletetask() : Call<Void>
 
 }

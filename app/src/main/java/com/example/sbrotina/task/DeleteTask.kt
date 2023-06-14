@@ -16,7 +16,7 @@ class DeleteTask : AppCompatActivity() {
         setContentView(R.layout.activity_delete_task)
 
         supportActionBar?.hide()
-        window.statusBarColor = Color.parseColor("#FFFFFF")
+        window.statusBarColor = Color.parseColor("#30C7AE")
 
         val btn = findViewById<CardView>(R.id.deletecardback)
         btn.setOnClickListener {
