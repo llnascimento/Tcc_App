@@ -8,13 +8,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView4"
             android:layout_width="350dp"
             android:layout_height="500dp"
-            android:backgroundTint="@color/verdeD"
+            android:backgroundTint="@color/black"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +41,7 @@
             android:id="@+id/navegarAdic"
             android:layout_width="84dp"
             android:layout_height="87dp"
-            android:backgroundTint="@color/verde"
+            android:backgroundTint="@color/verdes"
             app:cardCornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +64,7 @@
             android:id="@+id/cardsair"
             android:layout_width="84dp"
             android:layout_height="87dp"
-            android:backgroundTint="@color/verde"
+            android:backgroundTint="@color/verdes"
             app:cardCornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,23 +87,24 @@
             android:id="@+id/carddeletar"
             android:layout_width="84dp"
             android:layout_height="87dp"
-            android:backgroundTint="@color/verde"
+            android:backgroundTint="@color/verdes"
             app:cardCornerRadius="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView4"
-            app:layout_constraintVertical_bias="0.137">
+            app:layout_constraintVertical_bias="0.137"
+            >
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="62dp"
                 android:layout_height="66dp"
-                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/excluir"
-                tools:srcCompat="@drawable/excluir" />
+                app:srcCompat="@drawable/ic_action_calender"
+                tools:srcCompat="@drawable/ic_action_calender" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -110,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:text="Adicionar"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -119,17 +122,16 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="172dp"
-            android:text="Deletar"
-            android:textColor="@color/black"
+            android:text="Calendário"
+            android:textColor="@color/white"
             android:textSize="20dp"
+            android:gravity="center_horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carddeletar"
-            app:layout_constraintVertical_bias="0.062"
-
+            app:layout_constraintVertical_bias="0.056"
             />
 
         <TextView
@@ -138,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="54dp"
             android:text="Sair"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -15,7 +15,6 @@ class Home : AppCompatActivity() {
 
     private  val homeFragment = HomeFragment()
     private val timerFragment = TimerFragment()
-    private val calenderFragment = CalenderFragment()
     private val  settingsFragment = SettingsFragment()
 
 
@@ -29,14 +28,13 @@ class Home : AppCompatActivity() {
 
 
         supportActionBar?.hide()
-        window.statusBarColor = Color.parseColor("#FFFFFF")
+        window.statusBarColor = Color.parseColor("#30C7AE")
 
         replaceFragment(homeFragment)
 
         binding.BottomNavMenu.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)
-                R.id.ic_calender -> replaceFragment(calenderFragment)
                 R.id.ic_pomodoro -> replaceFragment(timerFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
             }

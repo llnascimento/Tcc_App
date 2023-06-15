@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:background="@drawable/background"
+    >
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavMenu"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/verdee"
+        android:layout_height="60dp"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -19,12 +21,15 @@
         app:layout_constraintVertical_bias="1.0"
         app:itemTextColor="@color/white"
         app:itemIconSize="30dp"
+        app:itemIconTint="@color/white"
         />
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="33dp">
 
     </FrameLayout>
 

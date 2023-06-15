@@ -1,6 +1,7 @@
 package com.example.sbrotina
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
@@ -10,8 +11,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.example.sbrotina.api.Endpoint
+import com.example.sbrotina.model.Tarefa
 import com.example.sbrotina.task.AdicionarTask
-import com.example.sbrotina.task.DeleteTask
+import com.example.sbrotina.util.NetworkUtils
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,14 +57,11 @@ class HomeFragment : Fragment() {
             startActivity(abrirOutraActivity)
         }
 
-        btn2.setOnClickListener {
-            val abrirOutraActivity = Intent(activity, DeleteTask::class.java)
-            startActivity(abrirOutraActivity)
-        }
-
         btn3.setOnClickListener{
             showAlertDialog()
         }
+
+        get()
 
         // Inflate the layout for this fragment
         return view
@@ -105,5 +108,37 @@ class HomeFragment : Fragment() {
         activity?.getColor(R.color.dialogButtonColor)?.let { positiveButton.setTextColor(it) }
         val negativeButton = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE)
         activity?.getColor(R.color.dialogButtonColor)?.let { negativeButton.setTextColor(it) }
+    }
+
+
+    fun get(){
+
+        val sharedPreferences = this.activity?.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+        val id = sharedPreferences?.getInt("id", 0)
+
+        val retrofitClient = NetworkUtils.getRetrofitInstance("http://sbrotina.somee.com")
+        val endpoint = retrofitClient.create(Endpoint::class.java)
+
+        endpoint.getUser(id.toString()).enqueue(object : Callback<List<Tarefa>> {
+            override fun onResponse(call: Call<List<Tarefa>>, response: Response<List<Tarefa>>) {
+                if (response.isSuccessful == true)
+                {
+                    println("Foi")
+                }
+
+                else
+                {
+                    println("Não foi: $response")
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<Tarefa>>, t: Throwable) {
+                println("F no chat : $t")
+            }
+
+        })
+
+
     }
 }

@@ -8,7 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        >
 
 
         <TextView
@@ -16,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Suas credenciais"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="23dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +31,7 @@
             android:id="@+id/cardView"
             android:layout_width="370dp"
             android:layout_height="82dp"
-            android:backgroundTint="@color/verdeD"
+            android:backgroundTint="@color/black"
             android:elevation="5dp"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +39,7 @@
             app:layout_constraintHorizontal_bias="0.609"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.176">
+            app:layout_constraintVertical_bias="0.173">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="50dp"
@@ -70,7 +72,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="370dp"
             android:layout_height="82dp"
-            android:backgroundTint="@color/verdeD"
+            android:backgroundTint="@color/black"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -79,12 +81,21 @@
             app:layout_constraintTop_toTopOf="@+id/cardView"
             app:layout_constraintVertical_bias="0.195">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="60dp">
+
             <ImageView
                 android:id="@+id/imageSettingsEmail"
-                android:layout_width="80dp"
-                android:layout_height="85dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/email"
                 tools:srcCompat="@drawable/email" />
+
+        </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/settingsEmail"
@@ -104,7 +115,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="370dp"
             android:layout_height="82dp"
-            android:backgroundTint="@color/verdeD"
+            android:backgroundTint="@color/black"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -112,16 +123,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="60dp">
+
             <ImageView
                 android:id="@+id/imageSettingsPass"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="34dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
                 app:srcCompat="@drawable/senha"
                 tools:srcCompat="@drawable/senha"
 
                 />
+
+        </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/settingsSenha"
@@ -140,7 +160,7 @@
             android:id="@+id/cardView2"
             android:layout_width="370dp"
             android:layout_height="82dp"
-            android:backgroundTint="@color/verdeD"
+            android:backgroundTint="@color/black"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -149,17 +169,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.663">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="60dp">
+
             <ImageView
                 android:id="@+id/imageSettingsSex"
-                android:layout_width="58dp"
-                android:layout_height="59dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="37dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
                 app:srcCompat="@drawable/ic_sex"
-                tools:srcCompat="@drawable/ic_sex"
-
-
-                />
+                tools:srcCompat="@drawable/ic_sex" />
+        </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/settingsGenero"

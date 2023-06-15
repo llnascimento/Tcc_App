@@ -5,8 +5,10 @@ import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface Endpoint {
 
@@ -24,8 +26,12 @@ interface Endpoint {
     @Headers("Content-Type: application/json")
     fun createtask(@Body userData: RegisterTarefaModel) : Call<Tarefa>
 
-    @DELETE("/sbrotina/api/Tarefa/Deletar")
+    @DELETE("/sbrotina/api/Tarefa/Deletar/{id}")
     @Headers("Content-Type: application/json")
     fun deletetask() : Call<Void>
+
+    @GET("/sbrotina/api/Tarefa/Buscar/{usuarioId}")
+    @Headers("Content-Type: application/json")
+    fun getUser(@Path("usuarioId") usuarioId: String) : Call<List<Tarefa>>
 
 }
