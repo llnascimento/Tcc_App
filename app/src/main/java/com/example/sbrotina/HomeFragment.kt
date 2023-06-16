@@ -1,6 +1,8 @@
 package com.example.sbrotina
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -9,6 +11,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.example.sbrotina.api.Endpoint
@@ -18,6 +21,7 @@ import com.example.sbrotina.util.NetworkUtils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Calendar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,6 +46,7 @@ class HomeFragment : Fragment() {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,10 +56,23 @@ class HomeFragment : Fragment() {
         val btn = view.findViewById<CardView>(R.id.navegarAdic)
         val btn2 = view.findViewById<CardView>(R.id.carddeletar)
         val btn3 = view.findViewById<CardView>(R.id.cardsair)
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        val dateTv = view.findViewById<TextView>(R.id.dateTv)
 
         btn.setOnClickListener{
             val abrirOutraActivity = Intent(activity, AdicionarTask::class.java)
             startActivity(abrirOutraActivity)
+        }
+
+        btn2.setOnClickListener{
+            val dpd = activity?.let { it1 ->
+                DatePickerDialog(it1, DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay -> dateTv.setText(""+ mDay +"/"+ mMonth+"/"+mYear)}, year,month,day)
+            }
+
+            dpd?.show()
         }
 
         btn3.setOnClickListener{
@@ -138,7 +156,5 @@ class HomeFragment : Fragment() {
             }
 
         })
-
-
     }
 }

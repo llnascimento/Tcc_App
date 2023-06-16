@@ -30,7 +30,7 @@
 
     <style name="Button.Timer" parent="Base.Button">
         <item name="android:textColor">@color/white</item>
-        <item name="backgroundTint">@color/verdeD</item>
+        <item name="backgroundTint">@color/black</item>
     </style>
 
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
