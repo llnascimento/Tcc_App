@@ -11,14 +11,14 @@ import com.example.sbrotina.model.Tarefa
 class Adapter(private val data: List<Tarefa>): RecyclerView.Adapter<Adapter.ViewHolder>()
 {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val textView: TextView = itemView.findViewById(R.id.textView)
+        val txt: TextView = itemView.findViewById(R.id.textexibir)
     }
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_get, parent, false)
-        return ViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_item_get, parent, false)
+        return ViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
@@ -26,9 +26,11 @@ class Adapter(private val data: List<Tarefa>): RecyclerView.Adapter<Adapter.View
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val tarefa = data[position]
-        holder.textView.text = tarefa.nome
-        holder.textView.text = tarefa.descricao
+
+        val name = data[position]
+        val cocat = name.nome.toString()
+
+        holder.txt.text = cocat
 
     }
 }

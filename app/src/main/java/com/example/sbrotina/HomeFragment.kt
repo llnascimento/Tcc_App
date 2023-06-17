@@ -14,10 +14,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sbrotina.adapter.Adapter
 import com.example.sbrotina.api.Endpoint
 import com.example.sbrotina.model.Tarefa
 import com.example.sbrotina.task.AdicionarTask
@@ -65,7 +63,6 @@ class HomeFragment : Fragment() {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
         val dateTv = view.findViewById<TextView>(R.id.dateTv)
-        val recycler = view.findViewById<RecyclerView>(R.id.recyclerView)
 
         btn.setOnClickListener{
             val abrirOutraActivity = Intent(activity, AdicionarTask::class.java)
@@ -83,6 +80,12 @@ class HomeFragment : Fragment() {
         btn3.setOnClickListener{
             showAlertDialog()
         }
+
+        get()
+
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = layoutManager
 
         // Inflate the layout for this fragment
         return view
@@ -134,10 +137,6 @@ class HomeFragment : Fragment() {
 
     fun get(){
 
-        val recyclerView: RecyclerView? = activity?.findViewById(R.id.recyclerView)
-        val layoutManager: ConstraintLayout? = activity?.let { ConstraintLayout(it) }
-
-
         val sharedPreferences = this.activity?.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
         val id = sharedPreferences?.getInt("id", 0)
 
@@ -146,20 +145,22 @@ class HomeFragment : Fragment() {
 
         endpoint.getUser(id.toString()).enqueue(object : Callback<List<Tarefa>> {
             override fun onResponse(call: Call<List<Tarefa>>, response: Response<List<Tarefa>>) {
-                if (response.isSuccessful) {
-                    val tarefaList = response.body()
-                    if (tarefaList != null) {
-                        val adapter = Adapter(tarefaList)
-                        recyclerView?.adapter = adapter
-                    }
-                } else {
+                if (response.isSuccessful == true)
+                {
+
+                }
+
+                else
+                {
                     println("Não foi: $response")
                 }
+
             }
 
             override fun onFailure(call: Call<List<Tarefa>>, t: Throwable) {
-                println("F no chat: $t")
+                println("F no chat : $t")
             }
+
         })
     }
 }
