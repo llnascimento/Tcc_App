@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sbrotina.adapter.Adapter
 import com.example.sbrotina.api.Endpoint
 import com.example.sbrotina.model.Tarefa
 import com.example.sbrotina.task.AdicionarTask
@@ -147,7 +148,10 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<List<Tarefa>>, response: Response<List<Tarefa>>) {
                 if (response.isSuccessful == true)
                 {
-
+                    val recyclerView = view?.findViewById<RecyclerView>(R.id.recyclerView)
+                    recyclerView?.layoutManager = LinearLayoutManager(activity)
+                    recyclerView?.setHasFixedSize(true)
+                    recyclerView?.adapter = response.body()?.let { Adapter(it) }
                 }
 
                 else
@@ -163,4 +167,5 @@ class HomeFragment : Fragment() {
 
         })
     }
+
 }
