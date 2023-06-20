@@ -28,7 +28,7 @@ interface Endpoint {
 
     @DELETE("/sbrotina/api/Tarefa/Deletar/{id}")
     @Headers("Content-Type: application/json")
-    fun deletetask() : Call<Void>
+    fun deletetask(@Path("id") id: String) : Call<Void>
 
     @GET("/sbrotina/api/Tarefa/Buscar/{usuarioId}")
     @Headers("Content-Type: application/json")

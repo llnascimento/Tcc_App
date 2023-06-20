@@ -65,20 +65,28 @@ class HomeFragment : Fragment() {
         val day = c.get(Calendar.DAY_OF_MONTH)
         val dateTv = view.findViewById<TextView>(R.id.dateTv)
 
-        btn.setOnClickListener{
+        btn.setOnClickListener {
             val abrirOutraActivity = Intent(activity, AdicionarTask::class.java)
             startActivity(abrirOutraActivity)
         }
 
-        btn2.setOnClickListener{
+        btn2.setOnClickListener {
             val dpd = activity?.let { it1 ->
-                DatePickerDialog(it1, DatePickerDialog.OnDateSetListener{ view, mYear, mMonth, mDay -> dateTv.setText(""+ mDay +"/"+ mMonth+"/"+mYear)}, year,month,day)
+                DatePickerDialog(
+                    it1,
+                    DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                        dateTv.setText("" + mDay + "/" + mMonth + "/" + mYear)
+                    },
+                    year,
+                    month,
+                    day
+                )
             }
 
             dpd?.show()
         }
 
-        btn3.setOnClickListener{
+        btn3.setOnClickListener {
             showAlertDialog()
         }
 
@@ -113,16 +121,14 @@ class HomeFragment : Fragment() {
     }
 
 
-
-
     private fun showAlertDialog() {
         val alertDialog = AlertDialog.Builder(activity, R.style.AlertDialogTheme)
             .setTitle("Sair")
             .setMessage("Deseja mesmo sair?")
-            .setPositiveButton("Sair" , DialogInterface.OnClickListener { dialogInterface, i ->
+            .setPositiveButton("Sair", DialogInterface.OnClickListener { dialogInterface, i ->
                 val abrirOutraActivity = Intent(activity, MainActivity::class.java)
                 startActivity(abrirOutraActivity)
-                Toast.makeText(activity,"Você saiu da sua conta!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "Você saiu da sua conta!!", Toast.LENGTH_LONG).show()
             })
             .setNegativeButton("Cancelar", null)
             .create()
@@ -136,9 +142,10 @@ class HomeFragment : Fragment() {
     }
 
 
-    fun get(){
+    fun get() {
 
-        val sharedPreferences = this.activity?.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            this.activity?.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE)
         val id = sharedPreferences?.getInt("id", 0)
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("http://sbrotina.somee.com")
@@ -146,16 +153,12 @@ class HomeFragment : Fragment() {
 
         endpoint.getUser(id.toString()).enqueue(object : Callback<List<Tarefa>> {
             override fun onResponse(call: Call<List<Tarefa>>, response: Response<List<Tarefa>>) {
-                if (response.isSuccessful == true)
-                {
+                if (response.isSuccessful == true) {
                     val recyclerView = view?.findViewById<RecyclerView>(R.id.recyclerView)
                     recyclerView?.layoutManager = LinearLayoutManager(activity)
                     recyclerView?.setHasFixedSize(true)
                     recyclerView?.adapter = response.body()?.let { Adapter(it) }
-                }
-
-                else
-                {
+                } else {
                     println("Não foi: $response")
                 }
 
