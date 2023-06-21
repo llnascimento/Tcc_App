@@ -124,6 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="68dp"
+        android:layout_marginEnd="100dp"
         android:text="Registre - se "
         android:textColor="@color/white"
         android:textSize="20dp"
